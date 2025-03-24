@@ -1,16 +1,20 @@
 import { Injectable } from '@nestjs/common';
 import { GenerateDeckDTO } from './dtos/generate-deck-dto';
-import { GoogleGenerativeAI, Schema, SchemaType } from "@google/generative-ai";
+import { GenerationConfig, GoogleGenerativeAI, Schema, SchemaType } from "@google/generative-ai";
 
 @Injectable()
 export class AiService {
-    async generateDeckContent(dto: GenerateDeckDTO){
+    private readonly genAI : GoogleGenerativeAI;
 
-        const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY as string);
+    constructor(){
+        this.genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY as string);
+    }
+
+    async generateDeckContent(dto: GenerateDeckDTO){
 
         const schema = this.buildSchema();
 
-        const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash", 
+        const model = this.genAI.getGenerativeModel({ model: "gemini-2.0-flash", 
             generationConfig: {
             responseMimeType: "application/json",
             responseSchema: schema,
@@ -110,12 +114,43 @@ export class AiService {
                                                     enum: ["heading", "subheading", "paragraph", "bullet"],
                                                     format: "enum",
                                                     nullable: false}
-                                            }
+                                            },
+                                            required: ["id", "text", "type"],
+                                            propertyOrdering: ["id", "text", "type"],
+                                            nullable: false
                                         }
                                     },
-                                    imageDescription: {
-                                        type: SchemaType.STRING,
-                                        description: "Describe appropriate side ready for this website",
+                                    image: {
+                                        type: SchemaType.OBJECT,
+                                        properties: {
+                                            shortQuery: {
+                                                type: SchemaType.STRING,
+                                                description: "Short, search-friemdly image query relevant to the slide.",
+                                                nullable: false
+                                            },
+                                            fullDescription: {
+                                                type: SchemaType.STRING,
+                                                description: "Detailed description of appropriate image for this slide.",
+                                                nullable: false
+                                            },
+                                            originalUrl: {
+                                                type: SchemaType.STRING,
+                                                description: "leave blank",
+                                                nullable: true
+                                            },
+                                            storedPath: {
+                                                type: SchemaType.STRING,
+                                                description: "leave blank",
+                                                nullable: true
+                                            },
+                                            selectedAt: {
+                                                type: SchemaType.STRING,
+                                                description: "leave blank",
+                                                nullable: true
+                                            }
+                                        },
+                                        required: ["shortQuery", "fullDescription", "originalUrl", "storedPath", "selectedAt"],
+                                        propertyOrdering: ["shortQuery", "fullDescription", "originalUrl", "storedPath", "selectedAt"],
                                         nullable: false
                                     },
                                     notes: {
@@ -124,13 +159,31 @@ export class AiService {
                                         nullable: false
                                     }
                                 },
-                                required: ["textBlocks", "imageDescription", "notes"],
-                                propertyOrdering: ["textBlocks", "imageDescription", "notes"],
+                                required: ["textBlocks", "image", "notes"],
+                                propertyOrdering: ["textBlocks", "image", "notes"],
                                 nullable: false
-                            }// end of content object
+                            },// end of content object
+                            background: {
+                                type: SchemaType.OBJECT,
+                                properties: {
+                                    color: {
+                                        type: SchemaType.STRING,
+                                        description: "Background color in the hex format (e.g., #FFFFFF). suggest appropriate background colors that match the tone and content of each slide",
+                                        nullable: false
+                                    },
+                                    gradient: {
+                                        type: SchemaType.STRING,
+                                        description: "CSS gradient value if applicable. suggest appropriate background colors that match the tone and content of each slide",
+                                        nullable: true
+                                    }
+                                },
+                                required: ["color"],
+                                propertyOrdering: ["color", "gradient"],
+                                nullable: false
+                            }
                         },// end of properties
-                        required: ["id", "title", "type", "content"],
-                        propertyOrdering: ["id", "title", "type", "content"],
+                        required: ["id", "title", "type", "content", "background"],
+                        propertyOrdering: ["id", "title", "type", "content", "background"],
                         nullable: false
                     }//end of slide object
                 }// end of slides array
