@@ -96,3 +96,22 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+
+Format the response as a JSON object with the following structure:
+{
+"title": "Deck title",
+"slides": [
+{
+"id": "slide1",
+"title": "Slide title",
+"type": "title|problem|solution|etc",
+"content": {
+"textBlocks": [
+{"id": "text1", "text": "Text content", "type": "heading|subheading|paragraph|bullet"}
+],
+"imageDescription": "Description of an appropriate image",
+"notes": "Speaker notes for this slide"
+}
+}
+]
+}
