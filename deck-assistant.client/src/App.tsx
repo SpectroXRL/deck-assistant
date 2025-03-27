@@ -1,33 +1,36 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { useEffect, useState } from "react";
+import DeckViewer, { DeckSchema } from "./components/DeckViewer";
+import apiClient from "./services/api-client";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [deck, setDeck] = useState<DeckSchema>({ title: "", slides: [] });
+  const [error, setError] = useState("");
+  const data = {
+    companyName: "EcoTech Solutions",
+    industry: "Renewable Energy",
+    problemStatement: "High carbon emissions from traditional energy sources",
+    solution: "Affordable solar panels with 40% higher efficiency",
+    businessModel: "Direct-to-consumer sales and installation services",
+    financials: "Projected $2M revenue in Year 1, $8M in Year 2",
+    teamInfo: "Founded by engineers from MIT and Stanford",
+  };
+
+  const originalEntries = deck;
+
+  useEffect(() => {
+    apiClient
+      .post("/ai/generate-deck", data)
+      .then((res) => setDeck(res.data))
+      .catch((err) => {
+        setError(err.message);
+        setDeck(originalEntries);
+      });
+  }, []);
 
   return (
     <>
-      <div>
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <DeckViewer title={deck.title} slides={deck.slides} />
+      {error}
     </>
   );
 }
