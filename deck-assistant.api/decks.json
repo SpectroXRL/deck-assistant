@@ -1,0 +1,24 @@
+[
+  {
+    "id": "1",
+    "title": "EcoTech Solutions Pitch Deck",
+    "companyName": "EcoTech Solutions",
+    "industry": "Renewable Energy",
+    "problemStatement": "High carbon emissions from traditional energy sources",
+    "solution": "Affordable solar panels with 40% higher efficiency",
+    "businessModel": "Direct-to-consumer sales and installation services",
+    "financials": "Projected $2M revenue in Year 1, $8M in Year 2",
+    "teamInfo": "Founded by engineers from MIT and Stanford"
+  },
+  {
+    "id": "a179d865-a602-49b7-92a7-a5267fbd1575",
+    "title": "EcoTech Solutions Pitch Deck 2",
+    "companyName": "EcoTech Solutions",
+    "industry": "Renewable Energy",
+    "problemStatement": "High carbon emissions from traditional energy sources",
+    "solution": "Affordable solar panels with 40% higher efficiency",
+    "businessModel": "Direct-to-consumer sales and installation services",
+    "financials": "Projected $2M revenue in Year 1, $8M in Year 2",
+    "teamInfo": "Founded by engineers from MIT and Stanford"
+  }
+]

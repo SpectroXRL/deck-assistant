@@ -74,8 +74,8 @@ export class AiService {
                         type: SchemaType.OBJECT,
                         properties: {
                             id: {
-                                type: SchemaType.STRING,
-                                description: "starting from 'slide1' will increase by 1 based on when added",
+                                type: SchemaType.NUMBER,
+                                description: "starting from 1 will increase by 1 based on when added",
                                 nullable: false
                             },
                             title: {
@@ -99,8 +99,8 @@ export class AiService {
                                             type: SchemaType.OBJECT,
                                             properties: {
                                                 id: {
-                                                    type: SchemaType.STRING,
-                                                    description: "starting from 'text1' will increase by 1 based on when added",
+                                                    type: SchemaType.NUMBER,
+                                                    description: "starting from 1 will increase by 1 based on when added",
                                                     nullable: false
                                                 },
                                                 text: {

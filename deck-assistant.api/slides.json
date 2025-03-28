@@ -1,0 +1,320 @@
+[
+  {
+    "deckId": "a179d865-a602-49b7-92a7-a5267fbd1575",
+    "slideGroup": [
+      {
+        "id": 1,
+        "title": "EcoTech Solutions: Powering a Sustainable Future",
+        "type": "title",
+        "content": {
+          "textBlocks": [
+            {
+              "id": 1,
+              "text": "EcoTech Solutions",
+              "type": "heading"
+            },
+            {
+              "id": 2,
+              "text": "Powering a Sustainable Future",
+              "type": "subheading"
+            }
+          ],
+          "image": {
+            "shortQuery": "solar panel farm sunrise",
+            "fullDescription": "An image of a vast solar panel farm at sunrise, symbolizing clean energy and a bright future.",
+            "originalUrl": null,
+            "storedPath": null,
+            "selectedAt": null
+          },
+          "notes": "Welcome everyone. We are EcoTech Solutions, and we're dedicated to powering a sustainable future through affordable and efficient solar energy."
+        },
+        "background": {
+          "color": "#f0f9ff",
+          "gradient": null
+        }
+      },
+      {
+        "id": 2,
+        "title": "The Problem: Our Carbon Footprint",
+        "type": "problem",
+        "content": {
+          "textBlocks": [
+            {
+              "id": 1,
+              "text": "High Carbon Emissions",
+              "type": "heading"
+            },
+            {
+              "id": 2,
+              "text": "Traditional energy sources contribute significantly to global carbon emissions.",
+              "type": "bullet"
+            },
+            {
+              "id": 3,
+              "text": "This leads to climate change, air pollution, and health problems.",
+              "type": "bullet"
+            },
+            {
+              "id": 4,
+              "text": "Current renewable energy solutions are often expensive and inefficient.",
+              "type": "bullet"
+            }
+          ],
+          "image": {
+            "shortQuery": "factory carbon emissions pollution",
+            "fullDescription": "An image depicting a factory emitting dark smoke into the atmosphere, illustrating the problem of carbon emissions.",
+            "originalUrl": null,
+            "storedPath": null,
+            "selectedAt": null
+          },
+          "notes": "The reliance on fossil fuels is causing significant environmental damage. Current renewable options often fall short in affordability and efficiency."
+        },
+        "background": {
+          "color": "#ffebee",
+          "gradient": null
+        }
+      },
+      {
+        "id": 3,
+        "title": "Our Solution: Affordable, High-Efficiency Solar",
+        "type": "solution",
+        "content": {
+          "textBlocks": [
+            {
+              "id": 1,
+              "text": "EcoTech Solar Panels",
+              "type": "heading"
+            },
+            {
+              "id": 2,
+              "text": "Affordable solar panels for residential and commercial use.",
+              "type": "bullet"
+            },
+            {
+              "id": 3,
+              "text": "40% higher efficiency compared to standard panels.",
+              "type": "bullet"
+            },
+            {
+              "id": 4,
+              "text": "Reduced energy costs and carbon footprint.",
+              "type": "bullet"
+            }
+          ],
+          "image": {
+            "shortQuery": "high efficiency solar panels rooftop",
+            "fullDescription": "An image showcasing high-efficiency solar panels installed on a rooftop, gleaming in the sunlight.",
+            "originalUrl": null,
+            "storedPath": null,
+            "selectedAt": null
+          },
+          "notes": "EcoTech Solutions offers a game-changing solution: solar panels that are both affordable and deliver superior efficiency, reducing your energy costs and environmental impact."
+        },
+        "background": {
+          "color": "#e8f5e9",
+          "gradient": null
+        }
+      },
+      {
+        "id": 4,
+        "title": "Market Opportunity",
+        "type": "solution",
+        "content": {
+          "textBlocks": [
+            {
+              "id": 1,
+              "text": "Target Market",
+              "type": "heading"
+            },
+            {
+              "id": 2,
+              "text": "Homeowners looking to reduce energy costs",
+              "type": "bullet"
+            },
+            {
+              "id": 3,
+              "text": "Businesses seeking sustainable energy solutions",
+              "type": "bullet"
+            },
+            {
+              "id": 4,
+              "text": "Market Size: The global solar energy market is projected to reach $223.3 Billion by 2026",
+              "type": "bullet"
+            }
+          ],
+          "image": {
+            "shortQuery": "market growth chart solar energy",
+            "fullDescription": "An image showing a graph indicating strong growth in the solar energy market.",
+            "originalUrl": null,
+            "storedPath": null,
+            "selectedAt": null
+          },
+          "notes": "Our target market includes homeowners and businesses interested in affordable, sustainable energy solutions. The global market is poised for significant expansion."
+        },
+        "background": {
+          "color": "#f9fbe7",
+          "gradient": null
+        }
+      },
+      {
+        "id": 5,
+        "title": "Business Model",
+        "type": "solution",
+        "content": {
+          "textBlocks": [
+            {
+              "id": 1,
+              "text": "Direct-to-Consumer Sales",
+              "type": "heading"
+            },
+            {
+              "id": 2,
+              "text": "Online platform and local sales teams.",
+              "type": "bullet"
+            },
+            {
+              "id": 3,
+              "text": "Installation Services",
+              "type": "heading"
+            },
+            {
+              "id": 4,
+              "text": "Certified installers provide professional and reliable service.",
+              "type": "bullet"
+            }
+          ],
+          "image": {
+            "shortQuery": "solar panel installation team",
+            "fullDescription": "An image depicting a team of professionals installing solar panels on a roof.",
+            "originalUrl": null,
+            "storedPath": null,
+            "selectedAt": null
+          },
+          "notes": "Our business model focuses on direct-to-consumer sales combined with professional installation services, guaranteeing customer satisfaction."
+        },
+        "background": {
+          "color": "#e0f2f1",
+          "gradient": null
+        }
+      },
+      {
+        "id": 6,
+        "title": "Financial Projections",
+        "type": "solution",
+        "content": {
+          "textBlocks": [
+            {
+              "id": 1,
+              "text": "Revenue Growth",
+              "type": "heading"
+            },
+            {
+              "id": 2,
+              "text": "Year 1: $2 Million",
+              "type": "bullet"
+            },
+            {
+              "id": 3,
+              "text": "Year 2: $8 Million",
+              "type": "bullet"
+            },
+            {
+              "id": 4,
+              "text": "Significant growth potential in the coming years.",
+              "type": "bullet"
+            }
+          ],
+          "image": {
+            "shortQuery": "financial growth chart upward trend",
+            "fullDescription": "An image showing an upward trending financial growth chart.",
+            "originalUrl": null,
+            "storedPath": null,
+            "selectedAt": null
+          },
+          "notes": "We project strong revenue growth, achieving $2 million in Year 1 and $8 million in Year 2."
+        },
+        "background": {
+          "color": "#fffde7",
+          "gradient": null
+        }
+      },
+      {
+        "id": 7,
+        "title": "Meet the Team",
+        "type": "solution",
+        "content": {
+          "textBlocks": [
+            {
+              "id": 1,
+              "text": "Experienced Leadership",
+              "type": "heading"
+            },
+            {
+              "id": 2,
+              "text": "Founded by engineers from MIT and Stanford.",
+              "type": "bullet"
+            },
+            {
+              "id": 3,
+              "text": "Proven track record in renewable energy and business development.",
+              "type": "bullet"
+            }
+          ],
+          "image": {
+            "shortQuery": "team of engineers renewable energy",
+            "fullDescription": "An image of a diverse team of engineers working on a renewable energy project.",
+            "originalUrl": null,
+            "storedPath": null,
+            "selectedAt": null
+          },
+          "notes": "Our team comprises experienced engineers and business professionals from top universities, ensuring the successful execution of our vision."
+        },
+        "background": {
+          "color": "#ede7f6",
+          "gradient": null
+        }
+      },
+      {
+        "id": 8,
+        "title": "Contact Us",
+        "type": "solution",
+        "content": {
+          "textBlocks": [
+            {
+              "id": 1,
+              "text": "Let's Power the Future Together!",
+              "type": "heading"
+            },
+            {
+              "id": 2,
+              "text": "Visit our website: www.ecotechsolutions.com",
+              "type": "bullet"
+            },
+            {
+              "id": 3,
+              "text": "Email: info@ecotechsolutions.com",
+              "type": "bullet"
+            },
+            {
+              "id": 4,
+              "text": "Call to Action: Invest in EcoTech Solutions and join us in building a sustainable future.",
+              "type": "paragraph"
+            }
+          ],
+          "image": {
+            "shortQuery": "contact information icons",
+            "fullDescription": "An image displaying contact information icons: website, email, phone.",
+            "originalUrl": null,
+            "storedPath": null,
+            "selectedAt": null
+          },
+          "notes": "Contact us to learn more about how you can partner with EcoTech Solutions and contribute to a greener future. Let's work together."
+        },
+        "background": {
+          "color": "#e3f2fd",
+          "gradient": null
+        }
+      }
+    ]
+  }
+]
