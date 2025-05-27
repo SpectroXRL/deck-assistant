@@ -4,7 +4,7 @@ Deck Assistant is a web application designed to help users create and manage pre
 
 ## Project Structure
 
-This project is a monorepo containing two main packages:
+This project is a monorepo containing two main package(one for the client, one for the backend):
 
 * **`deck-assistant.api`**: The backend API built with NestJS.
 * **`deck-assistant.client`**: The frontend client built with React and Vite.
