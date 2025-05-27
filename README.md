@@ -141,12 +141,6 @@ npm run dev
 npm run build
 ```
 
-**Linting**
-
-```bash
-npm run lint
-```
-
 ### Dependencies
 
 Key dependencies include:
