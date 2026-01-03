@@ -44,4 +44,49 @@ export class SlidesRepository{
         slidesArr.push(slides);
         await writeFile('slides.json', JSON.stringify(slidesArr));
     }
+
+    async updateTextBlock(deckId: string, slideId: number, textBlockId: number, text: string) {
+        const contents = await readFile('slides.json', 'utf-8');
+        const slidesArr: Slides[] = JSON.parse(contents);
+
+        const deckSlides = slidesArr.find(s => s.deckId === deckId);
+        if (!deckSlides) {
+            throw new Error(`Deck not found with ID: ${deckId}`);
+        }
+
+        const slide = deckSlides.slideGroup.find(s => s.id === slideId);
+        if (!slide) {
+            throw new Error(`Slide not found with ID: ${slideId}`);
+        }
+
+        const textBlock = slide.content.textBlocks.find(tb => tb.id === textBlockId);
+        if (!textBlock) {
+            throw new Error(`TextBlock not found with ID: ${textBlockId}`);
+        }
+
+        textBlock.text = text;
+
+        await writeFile('slides.json', JSON.stringify(slidesArr, null, 2));
+        return slide;
+    }
+
+    async updateSpeakerNotes(deckId: string, slideId: number, notes: string) {
+        const contents = await readFile('slides.json', 'utf-8');
+        const slidesArr: Slides[] = JSON.parse(contents);
+
+        const deckSlides = slidesArr.find(s => s.deckId === deckId);
+        if (!deckSlides) {
+            throw new Error(`Deck not found with ID: ${deckId}`);
+        }
+
+        const slide = deckSlides.slideGroup.find(s => s.id === slideId);
+        if (!slide) {
+            throw new Error(`Slide not found with ID: ${slideId}`);
+        }
+
+        slide.content.notes = notes;
+
+        await writeFile('slides.json', JSON.stringify(slidesArr, null, 2));
+        return slide;
+    }
 }

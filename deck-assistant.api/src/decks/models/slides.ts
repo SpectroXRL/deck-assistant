@@ -28,6 +28,8 @@ class Content{
     textBlocks: TextBlock[];
 
     image: Image;
+
+    notes: string;
 }
 
 class Slide{

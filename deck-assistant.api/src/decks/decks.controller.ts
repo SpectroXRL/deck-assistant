@@ -1,7 +1,9 @@
-import { Body, Controller, Get, NotFoundException, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, NotFoundException, Param, Post, Patch } from '@nestjs/common';
 import { DecksService } from './decks.service';
 import { CreateDeckDto } from './dtos/create-deck-dto';
 import { CreateSlidesDeckDto } from './dtos/create-slides-dto';
+import { UpdateTextBlockDto } from './dtos/update-textblock-dto';
+import { UpdateSpeakerNotesDto } from './dtos/update-speaker-notes-dto';
 
 @Controller('decks')
 export class DecksController {
@@ -48,5 +50,24 @@ export class DecksController {
     @Post("/:deckId")
     createSlide(@Body() body: CreateSlidesDeckDto){
         return this.decksService.createSlides(body);
+    }
+
+    @Patch("/:deckId/slides/:slideId/textblocks/:textBlockId")
+    updateTextBlock(
+        @Param('deckId') deckId: string,
+        @Param('slideId') slideId: number,
+        @Param('textBlockId') textBlockId: number,
+        @Body() body: UpdateTextBlockDto
+    ) {
+        return this.decksService.updateTextBlock(deckId, slideId, textBlockId, body.text);
+    }
+
+    @Patch("/:deckId/slides/:slideId/notes")
+    updateSpeakerNotes(
+        @Param('deckId') deckId: string,
+        @Param('slideId') slideId: number,
+        @Body() body: UpdateSpeakerNotesDto
+    ) {
+        return this.decksService.updateSpeakerNotes(deckId, slideId, body.notes);
     }
 }
