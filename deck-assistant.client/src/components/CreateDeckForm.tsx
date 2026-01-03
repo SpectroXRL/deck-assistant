@@ -27,179 +27,222 @@ const CreateDeckForm = ({ onSubmit }: Props) => {
   } = useForm<FormData>({ resolver: zodResolver(schema), mode: "onChange" });
 
   return (
-    <>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-          <div className="sm:col-span-4">
-            <label
-              htmlFor="title"
-              className="block text-sm/6 font-medium text-gray-900"
-            >
-              Title:
-            </label>
-            <div className="mt-2">
+    <div className="min-h-screen bg-gray-50">
+      {/* Header */}
+      <nav className="bg-black text-white px-6 py-4">
+        <h1 className="text-2xl font-semibold">Create Deck</h1>
+      </nav>
+
+      {/* Form Container */}
+      <div className="container mx-auto px-6 py-8 max-w-4xl">
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="space-y-6">
+            {/* Title Field */}
+            <div>
+              <label
+                htmlFor="title"
+                className="block text-base font-semibold text-gray-900 mb-1"
+              >
+                Deck Title
+              </label>
+              <p className="text-sm text-gray-600 mb-2">
+                Enter a memorable name for your pitch deck
+              </p>
               <input
                 {...register("title")}
                 id="title"
                 name="title"
                 type="text"
-                autoComplete="given-name"
-                className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                className="block w-full md:w-2/3 rounded-md bg-white px-4 py-2.5 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:outline-indigo-600"
+                placeholder="e.g., TechStartup Series A Pitch"
               />
+              {errors.title && (
+                <p className="text-red-600 text-sm mt-1">{errors.title.message}</p>
+              )}
             </div>
-            {errors.title && <p>{errors.title.message}</p>}
-          </div>
 
-          <div className="sm:col-span-4">
-            <label
-              htmlFor="companyName"
-              className="block text-sm/6 font-medium text-gray-900"
-            >
-              Title:
-            </label>
-            <div className="mt-2">
+            {/* Company Name Field */}
+            <div>
+              <label
+                htmlFor="companyName"
+                className="block text-base font-semibold text-gray-900 mb-1"
+              >
+                Company Name
+              </label>
+              <p className="text-sm text-gray-600 mb-2">
+                The official name of your company
+              </p>
               <input
                 {...register("companyName")}
                 id="companyName"
                 name="companyName"
                 type="text"
-                autoComplete="given-name"
-                className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                className="block w-full md:w-1/2 rounded-md bg-white px-4 py-2.5 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:outline-indigo-600"
+                placeholder="e.g., Acme Corporation"
               />
+              {errors.companyName && (
+                <p className="text-red-600 text-sm mt-1">{errors.companyName.message}</p>
+              )}
             </div>
-            {errors.companyName && <p>{errors.companyName.message}</p>}
-          </div>
 
-          <div className="sm:col-span-4">
-            <label
-              htmlFor="industry"
-              className="block text-sm/6 font-medium text-gray-900"
-            >
-              Title:
-            </label>
-            <div className="mt-2">
+            {/* Industry Field */}
+            <div>
+              <label
+                htmlFor="industry"
+                className="block text-base font-semibold text-gray-900 mb-1"
+              >
+                Industry
+              </label>
+              <p className="text-sm text-gray-600 mb-2">
+                The sector or market your company operates in
+              </p>
               <input
                 {...register("industry")}
                 id="industry"
                 name="industry"
                 type="text"
-                autoComplete="given-name"
-                className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                className="block w-full md:w-1/2 rounded-md bg-white px-4 py-2.5 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:outline-indigo-600"
+                placeholder="e.g., FinTech, Healthcare, E-commerce"
               />
+              {errors.industry && (
+                <p className="text-red-600 text-sm mt-1">{errors.industry.message}</p>
+              )}
             </div>
-            {errors.industry && <p>{errors.industry.message}</p>}
-          </div>
 
-          <div className="sm:col-span-4">
-            <label
-              htmlFor="problemStatement"
-              className="block text-sm/6 font-medium text-gray-900"
-            >
-              Title:
-            </label>
-            <div className="mt-2">
-              <input
+            {/* Problem Statement Field */}
+            <div>
+              <label
+                htmlFor="problemStatement"
+                className="block text-base font-semibold text-gray-900 mb-1"
+              >
+                Problem Statement
+              </label>
+              <p className="text-sm text-gray-600 mb-2">
+                Describe the key problem or pain point your company addresses
+              </p>
+              <textarea
                 {...register("problemStatement")}
                 id="problemStatement"
                 name="problemStatement"
-                type="text"
-                autoComplete="given-name"
-                className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                rows={3}
+                className="block w-full rounded-md bg-white px-4 py-2.5 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:outline-indigo-600"
+                placeholder="Describe the problem your target customers face..."
               />
+              {errors.problemStatement && (
+                <p className="text-red-600 text-sm mt-1">{errors.problemStatement.message}</p>
+              )}
             </div>
-            {errors.problemStatement && (
-              <p>{errors.problemStatement.message}</p>
-            )}
-          </div>
 
-          <div className="sm:col-span-4">
-            <label
-              htmlFor="solution"
-              className="block text-sm/6 font-medium text-gray-900"
-            >
-              Title:
-            </label>
-            <div className="mt-2">
-              <input
+            {/* Solution Field */}
+            <div>
+              <label
+                htmlFor="solution"
+                className="block text-base font-semibold text-gray-900 mb-1"
+              >
+                Solution
+              </label>
+              <p className="text-sm text-gray-600 mb-2">
+                Explain how your product or service solves the problem
+              </p>
+              <textarea
                 {...register("solution")}
                 id="solution"
                 name="solution"
-                type="text"
-                autoComplete="given-name"
-                className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                rows={3}
+                className="block w-full rounded-md bg-white px-4 py-2.5 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:outline-indigo-600"
+                placeholder="Describe your solution and its key benefits..."
               />
+              {errors.solution && (
+                <p className="text-red-600 text-sm mt-1">{errors.solution.message}</p>
+              )}
             </div>
-            {errors.solution && <p>{errors.solution.message}</p>}
-          </div>
 
-          <div className="sm:col-span-4">
-            <label
-              htmlFor="businessModel"
-              className="block text-sm/6 font-medium text-gray-900"
-            >
-              Title:
-            </label>
-            <div className="mt-2">
-              <input
+            {/* Business Model Field */}
+            <div>
+              <label
+                htmlFor="businessModel"
+                className="block text-base font-semibold text-gray-900 mb-1"
+              >
+                Business Model
+              </label>
+              <p className="text-sm text-gray-600 mb-2">
+                How your company generates revenue
+              </p>
+              <textarea
                 {...register("businessModel")}
                 id="businessModel"
                 name="businessModel"
-                type="text"
-                autoComplete="given-name"
-                className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                rows={2}
+                className="block w-full rounded-md bg-white px-4 py-2.5 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:outline-indigo-600"
+                placeholder="e.g., SaaS subscription, marketplace fees, B2B licensing..."
               />
+              {errors.businessModel && (
+                <p className="text-red-600 text-sm mt-1">{errors.businessModel.message}</p>
+              )}
             </div>
-            {errors.businessModel && <p>{errors.businessModel.message}</p>}
-          </div>
 
-          <div className="sm:col-span-4">
-            <label
-              htmlFor="financials"
-              className="block text-sm/6 font-medium text-gray-900"
-            >
-              Title:
-            </label>
-            <div className="mt-2">
-              <input
+            {/* Financials Field */}
+            <div>
+              <label
+                htmlFor="financials"
+                className="block text-base font-semibold text-gray-900 mb-1"
+              >
+                Financials
+              </label>
+              <p className="text-sm text-gray-600 mb-2">
+                Key financial metrics, projections, or current traction
+              </p>
+              <textarea
                 {...register("financials")}
                 id="financials"
                 name="financials"
-                type="text"
-                autoComplete="given-name"
-                className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                rows={2}
+                className="block w-full rounded-md bg-white px-4 py-2.5 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:outline-indigo-600"
+                placeholder="e.g., $500K ARR, 150% YoY growth, break-even in 2027..."
               />
+              {errors.financials && (
+                <p className="text-red-600 text-sm mt-1">{errors.financials.message}</p>
+              )}
             </div>
-            {errors.financials && <p>{errors.financials.message}</p>}
-          </div>
 
-          <div className="sm:col-span-4">
-            <label
-              htmlFor="teamInfo"
-              className="block text-sm/6 font-medium text-gray-900"
-            >
-              Title:
-            </label>
-            <div className="mt-2">
-              <input
+            {/* Team Info Field */}
+            <div>
+              <label
+                htmlFor="teamInfo"
+                className="block text-base font-semibold text-gray-900 mb-1"
+              >
+                Team Information
+              </label>
+              <p className="text-sm text-gray-600 mb-2">
+                Highlight key team members and their relevant experience
+              </p>
+              <textarea
                 {...register("teamInfo")}
                 id="teamInfo"
                 name="teamInfo"
-                type="text"
-                autoComplete="given-name"
-                className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                rows={2}
+                className="block w-full rounded-md bg-white px-4 py-2.5 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:outline-indigo-600"
+                placeholder="e.g., CEO: 10 years in fintech, CTO: ex-Google engineer..."
               />
+              {errors.teamInfo && (
+                <p className="text-red-600 text-sm mt-1">{errors.teamInfo.message}</p>
+              )}
             </div>
-            {errors.teamInfo && <p>{errors.teamInfo.message}</p>}
           </div>
-        </div>
 
-        <div className="mt-6 flex items-center justify-start gap-x-6">
-          <button disabled={!isValid} type="submit">
-            Submit
-          </button>
-        </div>
-      </form>
-    </>
+          {/* Submit Button */}
+          <div className="mt-8 flex items-center justify-start">
+            <button
+              disabled={!isValid}
+              type="submit"
+              className="bg-green-600 text-white px-8 py-3 rounded-full hover:bg-green-700 transition-colors font-medium disabled:bg-gray-400 disabled:cursor-not-allowed"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
   );
 };
 

@@ -31,4 +31,12 @@ export class DecksService {
     createSlides(slidesDetails: CreateSlidesDeckDto){
         return this.slidesRepo.create(slidesDetails);
     }
+
+    updateTextBlock(deckId: string, slideId: number, textBlockId: number, text: string) {
+        return this.slidesRepo.updateTextBlock(deckId, slideId, textBlockId, text);
+    }
+
+    updateSpeakerNotes(deckId: string, slideId: number, notes: string) {
+        return this.slidesRepo.updateSpeakerNotes(deckId, slideId, notes);
+    }
 }
